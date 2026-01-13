@@ -1,4 +1,7 @@
 package com.example.solar.quote.domain;
-
-public class QuoteStatus {
+public enum QuoteStatus {
+    PENDING,
+    ACCEPTED,
+    REJECTED,
+    EXPIRED
 }

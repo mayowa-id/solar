@@ -1,5 +1,6 @@
 package com.example.solar.professional.dto;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,10 +12,13 @@ import java.time.LocalTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AvailabilityDto {
-    private Long id;
+public class AddAvailabilityRequest {
+    @NotNull(message = "Date is required")
     private LocalDate date;
+
+    @NotNull(message = "Start time is required")
     private LocalTime startTime;
+
+    @NotNull(message = "End time is required")
     private LocalTime endTime;
-    private Boolean isBooked;
 }
